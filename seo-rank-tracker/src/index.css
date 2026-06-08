@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    /* Colors variables */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-border: var(--border);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-dark: var(--primary-dark);
+    --color-accent: var(--accent);
+
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-danger: var(--danger);
+
+    --color-glass-bg: var(--glass-bg);
+    --color-glass-border: var(--glass-border);
+}
+
+:root {
+    /* Light Mode */
+    --background: #f0f4ff;
+    --foreground: #111827;
+    --card: #ffffff;
+    --border: #dde3f0;
+    --muted: #e8edf8;
+    --muted-foreground: #6b7280;
+
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --accent: #7c3aed;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+
+    --scroll-track: #e8edf8;
+    --scroll-thumb: #c7d0e8;
+    --scroll-thumb-hover: #a0aec0;
+}
+
+.dark {
+    /* Dark Mode */
+    --background: #0d0d1a;
+    --foreground: #f9fafb;
+    --card: #13132a;
+    --border: #2a2a4a;
+    --muted: #1e1e3a;
+    --muted-foreground: #a1a1aa;
+
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+    --accent: #a78bfa;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    --scroll-track: #0d0d1a;
+    --scroll-thumb: #2a2a4a;
+    --scroll-thumb-hover: #3f3f6e;
+}
+
+html {
+    color-scheme: light dark;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 10%, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+button {
+    cursor: pointer;
+}
+
+.dm-serif {
+    font-family: "DM Serif Display", serif;
+}
+
+.outfit {
+    font-family: "Outfit", sans-serif;
+}
+
+.glass {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+}
+
+.dark .glass {
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.glass-strong {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+}
+
+/* gradients */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--accent), #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* Animations */
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+/* Score and badges colors */
+.score-good {
+    color: var(--success);
+}
+.score-medium {
+    color: var(--warning);
+}
+.score-poor {
+    color: var(--danger);
+}
+
+.score-bg-good {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.2);
+    border-width: 1px;
+}
+.score-bg-medium {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.2);
+    border-width: 1px;
+}
+.score-bg-poor {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    border-width: 1px;
+}
+
+.severity-critical {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+.severity-warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+.severity-info {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Background Patterns */
+.bg-dot-pattern {
+    background-image: radial-gradient(var(--primary) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover);
+}
