@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useApp } from "../context/AuthContext";
 
 export default function Navbar() {
-    const {user,logout}=useApp()
+    const {user}=useApp()
     const { theme, setTheme } = useTheme();
     const navigate = useNavigate();
     const location = useLocation();

@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { SearchIcon, ArrowRightIcon, BarChart3Icon, GlobeIcon, TrendingUpIcon } from "lucide-react";
 import AnalysesCard from "../components/AnalysesCard";
 import { useApp } from "../context/AuthContext";
-import { dummyAnalysisData } from "../assets/assets";
 
 interface AnalysisSummary {
     _id: string;
